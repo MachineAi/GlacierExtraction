@@ -333,7 +333,7 @@ def Lake_Extract(TM1, TM4, Mask, outpath, TraceLake, Slope):
 
     Lakes = gdalnumeric.LoadFile(TraceLake).astype(float)
     target = np.where(Lakes == 1)
-    LRatio = np.nanmean(Ratio[target]) + 0.05
+    LRatio = np.nanmean(Ratio[target]) + 0.025
 
     Ratio[(Shadow == 1)] = np.nan
     Ratio[(Ratio < LRatio)] = 1

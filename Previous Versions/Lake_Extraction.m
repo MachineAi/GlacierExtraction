@@ -1,4 +1,4 @@
-function Lake_Extraction(TM1_r, TM4_r, Mask_r, outpath, tracerLakes,Slope_r)
+function Lake_Extraction(TM1_r, TM4_r, Mask_r, outpath, tracerLakes, Slope_r, EPSG)
 %LakeExtract - Lake extraction via Landsat Band Ratios
 %   LakeExtract(TM1, TM4, Mask, outpath, TracerLakes, Slope) 
 %   returns a TIF file delineating lake areas in a given scene. 
@@ -58,6 +58,7 @@ B3 = int16(TM1);
 B4 = reshape(B3, TMinfo.Height, TMinfo.Width); %Reshape to save out
 clear B3
 
-geotiffwrite(outpath, B4, TMinfo.SpatialRef, 'CoordRefSysCode', TMinfo.GeoTIFFCodes.PCS);
+EPSG = str2num(EPSG);
+geotiffwrite(outpath, B4, TMinfo.SpatialRef, 'CoordRefSysCode', EPSG);% TMinfo.GeoTIFFCodes.PCS);
 disp(strcat(outpath,' created.'))
 exit
