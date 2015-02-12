@@ -1,3 +1,3 @@
-3500,4.5,25,2
-#Elevation cutoff, Min Velocity, Max Velocity, NDVI cutoff
+3500,4.5,25
+#Elevation cutoff, Min Velocity, Max Velocity
 #Needs to be named 'Threshold_Path_Row.csv'

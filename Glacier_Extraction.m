@@ -36,12 +36,10 @@ try
     ElevThreshold = str2double(Cells{1});
     MinVelocity = str2double(Cells{2});
     MaxVelocity = str2double(Cells{3});
-    NDVIThreshold = str2double(Cells{4});
 catch
     ElevThreshold = Cells(1);
     MinVelocity = Cells(2);
     MaxVelocity = Cells(3);
-    NDVIThreshold = Cells(4);
 end
 fclose(fid);
 
